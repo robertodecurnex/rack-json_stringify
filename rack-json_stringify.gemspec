@@ -14,9 +14,9 @@ Gem::Specification.new do |spec|
 
   spec.files         = [
     'lib/rack/json_stringify.rb',
-    'lib/rack/json_stringified/version.rb',
+    'lib/rack/json_stringify/version.rb',
     'spec/spec_helper.rb',
-    'spec/json_stringified_spec.rb',
+    'spec/json_stringify_spec.rb',
     'README.md'
   ]
   spec.test_files    = spec.files.grep(%r{^spec/})
@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'json'
   spec.add_runtime_dependency 'rack'
 
+  spec.add_development_dependency 'coveralls'
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
