@@ -7,7 +7,8 @@ describe Rack::JsonStringify do
   before :each do
     @response_status = 200
     @response_headers = {
-      'Content-Length' => '57'
+      'Content-Length' => '57',
+      'Content-Type' => 'application/json'
     }
     @response_body = ['{"key1":666,"key2":"666","key3":[1,"2"],"key4":{"key5":3}}']
 
@@ -41,7 +42,7 @@ describe Rack::JsonStringify do
   describe 'when an stringified response is requested' do
     
     before :each do
-      @request = Rack::MockRequest.env_for('/action.json', {'X-ACCEPTED-TYPES' => 'String'})
+      @request = Rack::MockRequest.env_for('/action.json', {'HTTP_X_ACCEPTED_TYPES' => 'String'})
       @stringified_response = Rack::JsonStringify.new(@app).call(@request)
       @stringified_response_status, @stringified_response_headers, @stringified_response_body = @stringified_response
     end
