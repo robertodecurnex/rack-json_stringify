@@ -13,7 +13,7 @@ module Rack
 
       status, headers, body = @app.call(env)
  
-      return [400,{},[]] if self.stringify? && self.json_response?(headers['Content-Type'])
+      return [400,{},[]] if self.stringify? && !self.json_response?(headers['Content-Type'])
 
       if self.stringify?
         json = ''
