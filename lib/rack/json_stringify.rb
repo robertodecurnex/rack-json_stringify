@@ -57,7 +57,7 @@ module Rack
       #
       # @return [TrueClass,FalseClass] 
       def stringify?
-        "#{@env['X-ACCEPTED-TYPES']}".downcase == 'string'
+        "#{@env['HTTP_X_ACCEPTED_TYPES']}".downcase == 'string'
       end
 
   end

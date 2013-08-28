@@ -1,5 +1,9 @@
 module Rack
-  module JsonStringify
-    VERSION = "0.0.1"
+
+  class JsonStringify
+
+    VERSION = "0.0.2"
+
   end
+
 end
